@@ -14,7 +14,7 @@ class argsConan(ConanFile):
     no_copy_source = True
 
     def source(self):
-        self.run_command("git clone -b '6.2.1' --single-branch --depth 1 %s" % (self.repo_url))
+        self.run_command("git clone -b '%s' --single-branch --depth 1 %s" % (self.version, self.repo_url))
     
     def run_command(self, cmd, cwd=None):
         self.output.info(cmd)
